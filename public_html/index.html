@@ -1,0 +1,314 @@
+<!--
+Google Days RD Congo 2014 HTML5 Slides
+
+Authors:Patrick Bashizi <bashizip@gmail.com>
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <!--This one seems to work all the time, but really small on ipad-->
+        <!--<meta name="viewport" content="initial-scale=0.4">-->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" media="all" href="theme/css/default.css">
+        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+        <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+        <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+    </head>
+    <body style="opacity: 0">
+
+    <slides class="layout-widescreen">
+
+        <slide class="title-slide segue nobackground">
+            <aside class="gdbar"><img src="images/gas_logo.png"></aside>
+            <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+            <hgroup class="auto-fadein">
+                <h1 data-config-title><!-- populated from slide_config.json --></h1>
+                <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+                <p data-config-presenter><!-- populated from slide_config.json --></p>
+            </hgroup>
+        </slide>
+
+        <slide>
+            <hgroup>
+                <h2>Google Apps Script 101</h2>
+            </hgroup>
+            <article>      
+                <h3><a href="https://developers.google.com/apps-script/guides/services?hl=FR">11 Google apps, 1 platform in the cloud</a></h3>
+                <p>Acroître le  pouvoir de vos Google Apps préférées — Telles que 
+                    <a href="https://developers.google.com/apps-script/reference/calendar?hl=FR">Calendar</a>,
+                    <a href="https://developers.google.com/apps-script/reference/document?hl=FR">Docs</a>,
+                    <a href="https://developers.google.com/apps-script/reference/drive?hl=FR">Drive</a>,
+                    <a href="https://developers.google.com/apps-script/reference/gmail?hl=FR">Gmail</a>, et
+                    <a href="https://developers.google.com/apps-script/reference/spreadsheet?hl=FR">Sheets</a>.
+                </p> <br/>
+                <div class="flexbox" style="margin-bottom:40px;">
+                    <img src="images/gapps.png">
+                </div>
+                <p>Apps Script vous permet
+                    <a href="https://developers.google.com/apps-script/guides/services?hl=FR">de faire davantage avec  Google</a>.Grâce à une platforme JavaScript 
+                    dans le cloud.</p>
+                <p>Ces scripts s'executent directement sur les serveurs de Google et ont accès à la plupart des produits google. </p>
+                <p>Ce qui permet d'automatiser beaucoup de tâches, sans avoir besoin d'être développeur.</p>
+            </article>
+        </slide>
+
+        <slide>
+            <hgroup>
+                <h2>Agenda (60 minutes)</h2>
+            </hgroup>
+            <article>
+                <div class="flexbox" style="margin-bottom:40px;">
+                    <img src="images/gas_logo.png">
+                </div>
+                <ul>
+                    <li>Rappel sur les Google Apps</li>
+                    <li>Ce qu'on peut faire avec les GAS</li>
+                    <li>Comment le faire</li>
+                </ul>
+            </article>
+        </slide>
+
+        <slide>
+            <sction class="vcenter flexbox">
+                <!--      <div>
+                          <img src="images/gapps.png">
+                      </div>-->
+                <div id="icon-container">
+                    <a class="service-block" href="https://developers.google.com/apps-script/reference/spreadsheet?hl=FR">
+                        <div class="service-icon" id="spreadsheets-icon">
+                            <div class="service-name">Sheets</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/document?hl=FR">
+                        <div class="service-icon" id="docs-icon">
+                            <div class="service-name">Docs</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/forms?hl=FR">
+                        <div class="service-icon" id="forms-icon">
+                            <div class="service-name">Forms</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/sites?hl=FR">
+                        <div class="service-icon" id="sites-icon">
+                            <div class="service-name">Sites</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/drive?hl=FR">
+                        <div class="service-icon" id="drive-icon">
+                            <div class="service-name">Drive</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/gmail?hl=FR">
+                        <div class="service-icon" id="gmail-icon">
+                            <div class="service-name">Gmail</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/calendar?hl=FR">
+                        <div class="service-icon" id="calendar-icon">
+                            <div class="service-name">Calendar</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/contacts?hl=FR">
+                        <div class="service-icon" id="contacts-icon">
+                            <div class="service-name">Contacts</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/groups?hl=FR">
+                        <div class="service-icon" id="groups-icon">
+                            <div class="service-name">Groups</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/maps?hl=FR">
+                        <div class="service-icon" id="maps-icon">
+                            <div class="service-name">Maps</div>
+                        </div>
+                    </a><a class="service-block" href="https://developers.google.com/apps-script/reference/language?hl=FR">
+                        <div class="service-icon" id="translate-icon">
+                            <div class="service-name">Translate</div>
+                        </div>
+                    </a>
+                </div>
+                <hgroup>
+                    <br/>
+                    <h2>Google Apps</h2>
+
+                </hgroup>
+                </section>
+        </slide>
+
+        <slide>
+            <sction class="vcenter flexbox">
+                <div>
+                    <img src="images/gas_logo.png">
+                </div>
+                <hgroup>
+                    <h2>Possibilités inouies !</h2>
+                </hgroup>
+                </section>
+        </slide>
+
+        <slide>
+            <hgroup>
+                <h2>Exemple de script</h2>
+                <h3> <a href="https://developers.google.com/apps-script/case-studies"> GMail Meter </a></h3>
+            </hgroup>
+            <article>
+                <ul>
+                    <li>Obtenir par mail les statistiques sur l'usage de son compte GMail <br/>
+                        <img src="images/daily_trafic.png">
+                    </li>
+                </ul>
+            </article>
+        </slide>
+
+
+        <slide>
+            <hgroup>
+                <h2>Exemple de script</h2>
+                <h3> <a href="https://developers.google.com/apps-script/case-studies"> GMail Meter </a></h3>
+            </hgroup>
+            <article>
+                <ul>
+                    <li>Obtenir par mail les statistiques sur l'usage de son compte GMail</li>
+                    <div>
+                        <img src="images/volume_stat.png">
+                    </div>
+                </ul>
+            </article>
+        </slide>
+        <slide>
+            <hgroup>
+                <h2>Exemple de script</h2>
+                <h3> <a href=" https://docs.google.com/spreadsheet/ccc?key=0Ah_UXWb20ck7dC1aUENkeHZWOVc2TXdFOXBzWU1vdFE&usp=drive_web#gid=0"> GMail Meter - Demo</a></h3>
+            </hgroup>
+            <article>
+                <p>
+                    Mis en oeuvre dans Google Sheets</p>
+                <div>   <img src="images/gmail_stats.png"></div>            
+            </article>
+        </slide>
+        <slide>
+            <hgroup>
+                <h2>GMail Meter</h2>
+                <h3>En arriere plan c'est ... du code Javascript</h3>
+            </hgroup>
+            <section class="vcenter flexbox">
+                <pre class="prettyprint" data-lang="js">
+     var dataTable = Charts.newDataTable();
+dataTable.addColumn(Charts.ColumnType['STRING'], 'Date');
+dataTable.addColumn(Charts.ColumnType['NUMBER'], 'Received');
+dataTable.addColumn(Charts.ColumnType['NUMBER'], 'Sent');
+
+for (var i = 0; i < variables.dayOfEmailsReceived.length; i++) { //create the rows
+  dataTable.addRow([(i + 1).toString(), variables.dayOfEmailsReceived[i],
+ variables.dayOfEmailsSent[i]]);
+}
+dataTable.build();
+var chartDate = Charts.newAreaChart().setDataTable(dataTable)
+.setDimensions(650, 400).build();
+                </pre>
+            </section>
+        </slide>
+      
+        <slide class="segue dark nobackground">
+            <aside class="gdbar"><img src="images/gas_logo.png"></aside>
+            <hgroup class="auto-fadein">
+                <h2>GAS En Action.</h2>
+                <h3>I. Etre alerté par SMS à la reception de mails importants grâce à Calendar</h3>
+            </hgroup>
+        </slide>
+
+        <slide>
+            <hgroup>
+                <h2>Alerte SMS a la reception d'un mail important</h2>
+            </hgroup>
+            <article>
+                </div>
+                <ul>
+                    <li>Recevoir un SMS a chaque reception d'un Email class&eacute; important</li>
+                    <li>Service Totalement gratuit</li>
+                    <li>Utilise les Filtres de Gmail et Google Calendar pour l'envoie des SMS </li>
+                </ul>
+               <h2> <a href="http://docs.google.com">Demo</a></h2>
+                <div>
+                    <img src="images/sms_alert.png">
+                </div>
+            </article>
+        </slide>
+
+       <slide class="segue dark nobackground">
+            <aside class="gdbar"><img src="images/gas_logo.png"></aside>
+            <hgroup class="auto-fadein">
+                <h2>GAS En Action.</h2>
+                <h3>II. Afficher ses Contatcs sur Google Maps</h3>
+            </hgroup>
+        </slide>
+
+        <slide>
+            <hgroup>
+             <h2><a href="https://docs.google.com/spreadsheet/ccc?key=0Ah_UXWb20ck7dHIwc0ZMazZjOTZxaTNqRTIyT0YyZEE#gid=2">Demo</a></h2>
+            </hgroup>
+            <article>
+                <div class="flexbox" style="margin-bottom:40px;">
+                    <img src="images/contacts_map.png">
+                </div>
+                </ul>
+            </article>
+        </slide>
+        
+          <slide class="segue dark nobackground">
+            <aside class="gdbar"><img src="images/gas_logo.png"></aside>
+            <hgroup class="auto-fadein">
+                <h2>Editeur des Scripts </h2>
+                <h3>Créer vos propres scripts au besoin</h3>
+            </hgroup>
+        </slide>
+        
+         <slide>
+            <hgroup>
+                <h2><a href="https://script.google.com/macros/d/Mr6rwk6bWqvP9b8rGEHhK8I9R1M4ElggQ/edit?uiv=2&tz=Europe/Paris&docTitle=Feuille+de+calcul+sans+titre&csid=tOO8aRkwDUkrUdxranWOh9Q.06660333941168297219.4196708541747168108&mid=ACjPJvFLzfR6uD-Mkds4gfDOiVBfe37RxOSgxx6g5jVDOBrPrsnnFB0stsiGIDxYs3m3BK_n2SYlXLp8yl1hzA3_1uiWgz6rvOZSEyjquUNtrFgg4gg&hl=en_US">
+                    L'éditeur des Scripts
+                    </a></h2>
+            </hgroup>
+            <article>
+                <div class="flexbox" style="margin-bottom:40px;">
+                    <img src="images/scripedit.png">
+                </div>
+                </ul>
+            </article>
+        </slide>    <slide>
+            <hgroup>
+                <h2><a href="http://www.labnol.org/internet/google-scripts/28281/">
+                   Autres Examples
+                    </a></h2>
+            </hgroup>
+            <article>
+              <ul>
+                    <li>Moniteur de disponibilité de site</li>
+                    <li>Planifier  les emails dans Gmail</li>
+                    <li>Crypter Gmail</li>
+                     <li>Transfert multiple dans Gmail</li>
+                     <li><a href="https://docs.google.com/spreadsheet/ccc?key=0Ah_UXWb20ck7dHdZT1RYX2VTY1JWY19LNy1XRUQ3TVE#gid=0">Extraire des Addresses Email</a></li>
+                  <li><a href="https://script.google.com/macros/s/AKfycbycbBcnQcYLIDkGrSrT3BljUCrF-Xa_c5M4HRGDTQsV9qKWhk0/exec">Hebergerment d'un site sur Google Drive en 1 Click</a></li>
+                     
+                </ul>
+            </article>
+        </slide>
+
+        <slide class="thank-you-slide segue nobackground">
+            <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+            <article class="flexbox vleft auto-fadein">
+                <h2>&lt;Thank You!&gt;</h2>
+            </article>
+            <p class="auto-fadein" data-config-contact>
+                <!-- populated from slide_config.json -->
+            </p>
+        </slide>
+        <slide class="backdrop"></slide>
+
+    </slides>
+    <script src="suthat/angular.min.js"></script> 
+
+    <!--[if IE]>
+      <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+      <script>CFInstall.check({mode: 'overlay'});</script>
+    <![endif]-->
+</body>
+</html>
